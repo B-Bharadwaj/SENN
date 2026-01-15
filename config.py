@@ -1,0 +1,17 @@
+from dataclasses import dataclass
+
+@dataclass
+class Config:
+    seed: int = 42
+    device = "cuda"  # auto-fallback in utils
+    generations: int = 6
+    population_size: int = 8
+    elite_k: int = 3
+    train_epochs: int = 2
+
+    # Fitness penalty (model size)
+    size_penalty_lambda: float = 1e-7  # tune later
+
+    num_classes: int = 10
+    batch_size: int = 256
+    num_workers: int = 2

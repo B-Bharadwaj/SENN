@@ -1,5 +1,21 @@
+<<<<<<< HEAD
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Dataset files (optional but recommended)
+data/cifar-10-batches-py/
+data/*.tar.gz
+
+# Outputs (keep images, ignore large checkpoints if needed)
+# outputs/best_model.pth   # uncomment if file is too large
+=======
 venv/
 __pycache__/
 *.pyc
 *.pyo
 .DS_Store
+>>>>>>> 44ef684da3226a20eff20163299a97712505851f
