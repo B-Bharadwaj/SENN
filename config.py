@@ -15,3 +15,6 @@ class Config:
     num_classes: int = 10
     batch_size: int = 256
     num_workers: int = 2
+    # Phase 1: final retrain of best DNA
+    final_train_epochs: int = 15
+    weight_decay: float = 1e-4
