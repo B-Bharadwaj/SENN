@@ -1,0 +1,2918 @@
+[
+  {
+    "child_id": "450058bf596216e2",
+    "parent_id": "ac0b47c0a84bcb76",
+    "generation": 1,
+    "type": "change_kernel",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 3,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": null
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0017543126555763186
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": null
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0017543126555763186
+    }
+  },
+  {
+    "child_id": "c0d2daaccdeaba44",
+    "parent_id": "ae21375090501c7e",
+    "generation": 1,
+    "type": "toggle_batchnorm",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "450058bf596216e2",
+    "parent_id": "ac0b47c0a84bcb76",
+    "generation": 1,
+    "type": "change_kernel",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 3,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": null
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0017543126555763186
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": null
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0017543126555763186
+    }
+  },
+  {
+    "child_id": "82f3fce74ec98490",
+    "parent_id": "ae21375090501c7e",
+    "generation": 1,
+    "type": "change_filters",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "4b707f0844df4fae",
+    "parent_id": "ae21375090501c7e",
+    "generation": 1,
+    "type": "change_head_hidden",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": 128,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "bb7b1515476e4a4d",
+    "parent_id": "82f3fce74ec98490",
+    "generation": 2,
+    "type": "change_head_hidden",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": 128,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "552f3ce2c5734164",
+    "parent_id": "c0d2daaccdeaba44",
+    "generation": 2,
+    "type": "change_head_dropout",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "7afa6ab730a8e6b7",
+    "parent_id": "82f3fce74ec98490",
+    "generation": 2,
+    "type": "add_block",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 32,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "a8414fdc3831bfce",
+    "parent_id": "c0d2daaccdeaba44",
+    "generation": 2,
+    "type": "change_activation",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "aa4a70822196f0eb",
+    "parent_id": "ae21375090501c7e",
+    "generation": 2,
+    "type": "add_block",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "4391f31e05216ee5",
+    "parent_id": "ae21375090501c7e",
+    "generation": 3,
+    "type": "change_dropout",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.2
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "c3e34a79f4f92627",
+    "parent_id": "552f3ce2c5734164",
+    "generation": 3,
+    "type": "remove_block",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "97fd147c127856ac",
+    "parent_id": "552f3ce2c5734164",
+    "generation": 3,
+    "type": "add_block",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "045a1a529d19916d",
+    "parent_id": "c0d2daaccdeaba44",
+    "generation": 3,
+    "type": "change_pooling",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "5c94a4bbaefcb703",
+    "parent_id": "ae21375090501c7e",
+    "generation": 3,
+    "type": "change_head_dropout",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.5
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "1e755d188746935d",
+    "parent_id": "97fd147c127856ac",
+    "generation": 4,
+    "type": "change_filters",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 64,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "f8d0817fb75b748e",
+    "parent_id": "97fd147c127856ac",
+    "generation": 4,
+    "type": "toggle_batchnorm",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "d25215d883afce00",
+    "parent_id": "ae21375090501c7e",
+    "generation": 4,
+    "type": "change_pooling",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "none",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "147c41399011b7a1",
+    "parent_id": "ae21375090501c7e",
+    "generation": 4,
+    "type": "change_activation",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": null
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "d3b122296bf53b24",
+    "parent_id": "97fd147c127856ac",
+    "generation": 4,
+    "type": "change_pooling",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "2df3f9133832abd7",
+    "parent_id": "f8d0817fb75b748e",
+    "generation": 5,
+    "type": "change_activation",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "880b48265b794cc7",
+    "parent_id": "d3b122296bf53b24",
+    "generation": 5,
+    "type": "change_pooling",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "none",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "cd09ff63d8c5d03a",
+    "parent_id": "d3b122296bf53b24",
+    "generation": 5,
+    "type": "change_filters",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 16,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "af474c3f764e5aa9",
+    "parent_id": "d3b122296bf53b24",
+    "generation": 5,
+    "type": "add_block",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "2992a3523003c709",
+    "parent_id": "97fd147c127856ac",
+    "generation": 5,
+    "type": "toggle_batchnorm",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "4c6ba626e33f2efe",
+    "parent_id": "2992a3523003c709",
+    "generation": 6,
+    "type": "remove_block",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "c884f0ff4d20397c",
+    "parent_id": "af474c3f764e5aa9",
+    "generation": 6,
+    "type": "remove_block",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "bee0246a18a4ac3c",
+    "parent_id": "97fd147c127856ac",
+    "generation": 6,
+    "type": "change_activation",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "5b3cef91dd581528",
+    "parent_id": "af474c3f764e5aa9",
+    "generation": 6,
+    "type": "change_head_dropout",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "none",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.4
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  },
+  {
+    "child_id": "a20e85aedd4c9a8c",
+    "parent_id": "97fd147c127856ac",
+    "generation": 6,
+    "type": "change_dropout",
+    "before": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    },
+    "after": {
+      "version": 1,
+      "input_shape": [
+        3,
+        32,
+        32
+      ],
+      "num_classes": 10,
+      "conv_blocks": [
+        {
+          "out_channels": 64,
+          "kernel_size": 3,
+          "activation": "leaky_relu",
+          "pooling": "avg",
+          "batchnorm": false,
+          "dropout": null
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "relu",
+          "pooling": "max",
+          "batchnorm": true,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        },
+        {
+          "out_channels": 32,
+          "kernel_size": 5,
+          "activation": "leaky_relu",
+          "pooling": "max",
+          "batchnorm": false,
+          "dropout": 0.1
+        }
+      ],
+      "use_gap": true,
+      "head": {
+        "hidden_dim": null,
+        "dropout": 0.1
+      },
+      "optimizer": "adamw",
+      "lr": 0.0010121916762411876
+    }
+  }
+]
