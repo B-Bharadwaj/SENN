@@ -2,31 +2,37 @@
 
 ## 📌 Overview
 
-**SENN (Self-Evolving Neural Network)** is a research-grade evolutionary framework that **automatically designs, optimizes, and compresses convolutional neural networks (CNNs)** for image classification.
+**SENN (Self-Evolving Neural Network)** is a research-grade evolutionary framework that **automatically discovers, optimizes, and compresses convolutional neural network (CNN) architectures** for image classification.
 
-Instead of manually designing neural architectures, SENN treats each CNN as a **genetic individual** and evolves it over multiple generations using principles inspired by **biological evolution**:
+Instead of manually designing neural architectures, SENN represents each CNN as a **genetic individual encoded by a deterministic Architecture DNA** and evolves architectures over multiple generations using a **mutation-driven evolutionary process** combined with rigorous selection and evaluation.
 
-- Mutation  
-- Crossover  
-- Selection  
-- Multi-objective optimization  
-- Weight inheritance  
-- Structured pruning  
+The evolutionary process in SENN is based on:
 
-The system progressively discovers CNN architectures that achieve **high accuracy with low computational cost**, without human intervention.
+- Mutation-based architecture evolution  
+- Selection of high-performing architectures  
+- Multi-objective optimization (accuracy vs efficiency)  
+- Strict architecture reproducibility via DNA  
+- Structured pruning for model compression  
+
+Manual architecture design is entirely avoided.  
+Genetic crossover and weight inheritance are **intentionally excluded** to preserve architectural validity, deterministic reconstruction, and implementation robustness.
+
+As evolution progresses, SENN discovers CNN architectures that achieve **strong accuracy while remaining parameter- and computation-efficient**, without human intervention.
+
 
 ---
 
+
 ## ✨ Key Features
 
-- 🔬 Neural Architecture Search (NAS) via evolution  
-- 🧬 CNNs represented as genetic DNA (JSON genotype)  
-- ⚖️ Multi-objective optimization (accuracy vs efficiency)  
-- 🔁 Weight inheritance for faster convergence  
-- ✂️ Structured pruning for model compression  
-- 📊 Pareto-optimal selection (NSGA-II)  
-- 📈 Rich logging, visualization, and lineage tracking  
-- 🖥️ Optional Streamlit dashboard for live monitoring  
+- 🔬 Mutation-driven Neural Architecture Search (NAS) 
+- 🧬 Deterministic Architecture DNA (JSON-based genotype) 
+- ⚖️ Multi-objective optimization using Pareto dominance  
+- 🔁 Structured pruning for efficiency improvement
+- ✂️ Safe model construction with pre-training validation     
+- 📊 Full lineage and mutation tracking   
+- 📈 Reproducible architecture reconstruction 
+- 🖥️ Optional Streamlit dashboard for live monitoring
 
 ---
 
@@ -40,8 +46,8 @@ High-level workflow:
 Generate architectures
 → Train briefly
 → Evaluate
-→ Select best
-→ Mutate / Crossover
+→ Select
+→ Mutate DNA
 → Next generation
 → Repeat
 ```
@@ -176,29 +182,6 @@ All mutations are **constraint-aware**, ensuring valid CNNs.
 
 ---
 
-## 🔀 Crossover (Genetic Recombination)
-
-Crossover combines two parent architectures:
-
-- Early convolution blocks from Parent A  
-- Later blocks from Parent B  
-- Head inherited from one parent  
-
-This encourages exploration beyond local optima.
-
----
-
-## 🧠 Weight Inheritance (Warm Start)
-
-To reduce training cost:
-
-- Layers with identical shapes inherit parent weights  
-- New or modified layers are randomly initialized  
-
-This significantly accelerates convergence and mimics biological inheritance.
-
----
-
 ## ✂️ Pruning (Model Compression)
 
 SENN integrates pruning for efficiency.
@@ -221,9 +204,7 @@ Result: **smaller, faster models with minimal accuracy loss**.
 
 → Select (Pareto / NSGA-II)
 
-→ Mutate + Crossover
-
-→ Weight inheritance
+→ Mutate DNA
 
 → Prune
 
@@ -306,21 +287,12 @@ This transforms SENN from a research prototype into a **usable system**.
 - FLOPs
 - Latency
 
-### Phase 4 – Crossover
-- Genetic recombination
-
-### Phase 5 – Weight Inheritance
-- Warm-start children
-
-### Phase 6 – Pruning
+### Phase 4 – Pruning
 - Structured compression
 
-### Phase 7 – Dashboard
+### Phase 5 – Dashboard
 - Visualization & interaction
 
-### Phase 8 – Dataset Extension (Optional)
-- CIFAR-100
-- Custom datasets
 
 
 
