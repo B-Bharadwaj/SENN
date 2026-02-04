@@ -73,3 +73,33 @@ class GenomeCNN(nn.Module):
 
 def build_model(genome, num_classes=10):
     return GenomeCNN(genome, num_classes=num_classes)
+
+def count_params(model) -> int:
+    """Calculate total trainable parameters in the model"""
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+def count_flops(model, input_size):
+    """Calculate FLOPs for the model"""
+    total_flops = 0
+
+    def conv_flops(input_size, kernel_size, in_channels, out_channels, stride=1, padding=0):
+        # Calculate output size for Conv2D layer manually (considering stride and padding)
+        output_height = (input_size[1] + 2 * padding - kernel_size) // stride + 1
+        output_width = (input_size[2] + 2 * padding - kernel_size) // stride + 1
+        return 2 * (out_channels * kernel_size * kernel_size * in_channels * output_height * output_width)
+
+    def fc_flops(input, output):
+        # FLOPs for Fully Connected Layers
+        return 2 * (input * output)
+
+    # Iterate over layers
+    for layer in model.modules():
+        if isinstance(layer, nn.Conv2d):
+            # Consider stride and padding for Conv2D layers
+            total_flops += conv_flops(input_size, layer.kernel_size[0], layer.in_channels, layer.out_channels, stride=layer.stride[0], padding=layer.padding[0])
+            # Update input size for next layer (accounting for stride and padding)
+            input_size = (layer.out_channels, input_size[1] // layer.stride[0], input_size[2] // layer.stride[0])  # assuming square kernels and square strides
+        elif isinstance(layer, nn.Linear):
+            total_flops += fc_flops(layer.in_features, layer.out_features)
+
+    return total_flops

@@ -21,12 +21,12 @@ def train_one(model, loader, optimizer, device):
     return total_loss / total, correct / total
 
 @torch.no_grad()
-def evaluate(model, loader, device):
+def evaluate(model, val_loader, device, input_size):
     model.eval()
     loss_fn = nn.CrossEntropyLoss()
     total, correct, total_loss = 0, 0, 0.0
     all_preds, all_y = [], []
-    for x, y in loader:
+    for x, y in val_loader:
         x, y = x.to(device), y.to(device)
         logits = model(x)
         loss = loss_fn(logits, y)

@@ -9,17 +9,20 @@ class Candidate:
     val_accuracy: float
     param_count: int
     flops: int
+    latency: float
 
 def dominates(a: Candidate, b: Candidate) -> bool:
     not_worse = (
         a.val_accuracy >= b.val_accuracy and
         a.param_count <= b.param_count and
-        a.flops <= b.flops
+        a.flops <= b.flops and
+        a.latency <= b.latency  # Compare latency here
     )
     strictly_better = (
         a.val_accuracy > b.val_accuracy or
         a.param_count < b.param_count or
-        a.flops < b.flops
+        a.flops < b.flops or
+        a.latency < b.latency  # Add latency to strict improvement
     )
     return not_worse and strictly_better
 
