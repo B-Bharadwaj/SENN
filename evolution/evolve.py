@@ -11,7 +11,7 @@ from evolution.dna_schema import ArchitectureDNA
 from evolution.dna_builder import build_model_from_dna
 from evolution.dna_validator import validate_dna
 from evolution.dna_mutation import mutate_dna
-
+from utils.latency import estimate_latency
 from utils.run_registry import ArchMeta, create_run_dir, save_arch_artifacts
 from utils.lineage_logger import init_lineage_csv, append_lineage
 from utils.mutation_logger import init_mutation_history, append_mutation
@@ -121,6 +121,7 @@ def init_population(P: int, num_classes: int) -> list[Individual]:
 # -------------------------
 def evolve(cfg, train_loader, val_loader, device):
     # ---- Phase 1: run artifacts
+    from evaluation.metrics import estimate_latency
     run_dir = create_run_dir(Path("outputs"))
     lineage_csv = run_dir / "lineage.csv"
     mutation_json = run_dir / "mutation_history.json"
@@ -176,11 +177,14 @@ def evolve(cfg, train_loader, val_loader, device):
             for _ in range(cfg.train_epochs):
                 train_one(model, train_loader, opt, device)
 
-            _, val_acc, y_true, y_pred = evaluate(model, val_loader, device)
+            # Inside the evolve function
+            input_size = (3, 32, 32)  # CIFAR-10 input size
+            _, val_acc, _, _ = evaluate(model, val_loader, device, input_size=(1, 3, 32, 32))
 
             # ---- Phase 2 metrics (deterministic)
             n_params = count_trainable_params(model)
             flops = estimate_flops_conv_linear(model, input_shape=(1, 3, 32, 32))
+            latency = estimate_latency(model, input_shape=(1, 3, 32, 32))  # Measure latency
 
             # ---- Phase 1 fitness kept for comparison (do NOT remove yet)
             fit = fitness(val_acc, n_params, cfg.size_penalty_lambda)
@@ -191,6 +195,7 @@ def evolve(cfg, train_loader, val_loader, device):
                 "val_acc": float(val_acc),
                 "params": int(n_params),
                 "flops": int(flops),
+                "latency": float(latency),
                 "indiv": indiv,
             })
 
@@ -201,6 +206,7 @@ def evolve(cfg, train_loader, val_loader, device):
                 "val_accuracy": float(val_acc),
                 "param_count": int(n_params),
                 "flops": int(flops),
+                "latency": float(latency)if latency is not None else 0.0,  # Include latency in the row
             })
 
 
@@ -254,6 +260,7 @@ def evolve(cfg, train_loader, val_loader, device):
                 val_accuracy=r["val_acc"],
                 param_count=r["params"],
                 flops=r["flops"],
+                latency=r["latency"], 
             )
             for r in scored
         ]
