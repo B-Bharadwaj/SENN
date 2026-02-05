@@ -20,6 +20,8 @@ from utils.metrics_logger import init_metrics_csv, append_metrics_row
 from evolution.pareto import Candidate, pareto_front, select_survivors_from_front
 from evaluation.pareto_plots import plot_generation_fronts, plot_trends
 from evolution.pareto import nsga2_select
+from pruning.prune_model import prune_model
+from evaluation.evaluate_model import evaluate_model
 
 # -------------------------
 # Phase 1 Individual
@@ -167,6 +169,12 @@ def evolve(cfg, train_loader, val_loader, device):
 
             # ---- Phase 1: build model ONLY from DNA (deterministic)
             model = build_model_from_dna(indiv.dna).to(device)
+            # ---- Apply pruning after building the model
+            model = prune_model(model, pruning_percentage=0.1)  # Apply pruning (e.g., prune 20% of weights)
+
+            # ---- Evaluate the pruned model (optional, to check accuracy before training)
+            val_acc = evaluate_model(model, val_loader, device)  # Get validation accuracy after pruning
+            print(f"Validation accuracy after pruning: {val_acc}")
 
             # Optimizer (keeps your behavior)
             lr = indiv.dna.lr if indiv.dna.lr is not None else getattr(cfg, "lr", 1e-3)

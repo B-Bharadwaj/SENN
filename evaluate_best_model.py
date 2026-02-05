@@ -6,6 +6,7 @@ from utils.utils import get_device
 from config import Config
 from data.CIFAR10 import get_cifar10_loaders
 from evolution.dna_schema import ArchitectureDNA
+from pruning.prune_model import prune_model 
 
 def evaluate_best_model():
     # Load the best architecture DNA from the saved file
@@ -23,6 +24,9 @@ def evaluate_best_model():
     
     # Build model from the best DNA
     model = build_model_from_dna(best_dna).to(device)
+
+    # **Apply pruning to the model here** (e.g., pruning 20% of the weights)
+    model = prune_model(model, pruning_percentage=0.1)  # Adjust the pruning percentage as needed
 
     # Load the training, validation, and test loaders
     cfg = Config()  # Make sure to use your config file to define parameters
