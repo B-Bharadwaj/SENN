@@ -8,7 +8,7 @@ from evolution.dna_builder import build_model_from_dna
 from evaluation.train_eval import evaluate, train_one
 from utils.utils import set_seed, get_device, ensure_dir
 import os
-os.makedirs("outputs/pareto_fronts", exist_ok=True)
+#os.makedirs("outputs/pareto_fronts", exist_ok=True)
 
 # Phase 1 reproducibility (recommended)
 torch.backends.cudnn.benchmark = False
@@ -36,20 +36,23 @@ def main():
     train_loader, val_loader, test_loader = get_cifar10_loaders(cfg.batch_size, cfg.num_workers)
 
     # Phase 1: evolve returns best_dna (ArchitectureDNA)
-    best_dna, best_fit, (best_acc, best_params), history = evolve(cfg, train_loader, val_loader, device)
+    best_dna, best_fit, (best_acc, best_params), history, run_dir = evolve(cfg, train_loader, val_loader, device)
+
 
     print("\n=== BEST ARCHITECTURE DNA ===")
     print(best_dna.to_json())
     print(f"Best arch_id: {best_dna.arch_id()}")
     print(f"Best fitness: {best_fit:.6f} | best val acc: {best_acc:.4f} | params: {best_params}")
 
-    plot_history(history, "outputs/acc_vs_gen.png")
-    print("Saved: outputs/acc_vs_gen.png")
+    acc_plot_path = run_dir / "acc_vs_gen.png"
+    plot_history(history, str(acc_plot_path))
+    print(f"Saved: {acc_plot_path}")
 
     # Save the best model DNA and other info for later evaluation
-    with open("outputs/best_architecture.json", "w") as f:
-        json.dump(best_dna.to_dict(), f)
-    print("Saved: outputs/best_architecture.json")
+    best_arch_path = run_dir / "best_architecture.json"
+    with open(best_arch_path, "w") as f:
+        json.dump(best_dna.to_dict(), f, indent=2)
+    print(f"Saved: {best_arch_path}")
 
     # -------------------------
     # Phase 1: Final retrain best DNA (commented out for now)
