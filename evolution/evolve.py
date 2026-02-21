@@ -131,11 +131,11 @@ def evolve(cfg, train_loader, val_loader, device):
     init_mutation_history(mutation_json)
 
     # ---- Phase 2: global metrics log (required)
-    metrics_csv = Path("outputs") / "metrics.csv"
+    metrics_csv = run_dir / "metrics.csv"
     init_metrics_csv(str(metrics_csv))
 
     # ---- Phase 2: pareto plots output (required)
-    pareto_dir = Path("outputs") / "pareto_fronts"
+    pareto_dir = run_dir / "pareto_fronts"
     pareto_dir.mkdir(parents=True, exist_ok=True)
 
     # Deterministic RNG (use cfg.seed if present)
@@ -334,4 +334,10 @@ def evolve(cfg, train_loader, val_loader, device):
         dst = pareto_dir / f"gen_{gen}.png"
         if src.exists():
             shutil.copyfile(src, dst)
-    return best_dna, best_fit, best_metrics, history
+    import json
+    best_arch_path = run_dir / "best_architecture.json"
+    with open(best_arch_path, "w") as f:
+        json.dump(best_dna.to_dict(), f, indent=2)
+    print(f"Saved: {best_arch_path}")
+
+    return best_dna, best_fit, best_metrics, history , run_dir
