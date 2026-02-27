@@ -1,58 +1,83 @@
 import json
+from pathlib import Path
+
 import torch
-from evolution.dna_builder import build_model_from_dna
-from evaluation.train_eval import evaluate, train_one
-from utils.utils import get_device
+
 from config import Config
 from data.CIFAR10 import get_cifar10_loaders
+from evolution.dna_builder import build_model_from_dna
 from evolution.dna_schema import ArchitectureDNA
-from pruning.prune_model import prune_model 
+from evaluation.train_eval import evaluate, train_one
+from utils.utils import get_device
+from pruning.prune_model import prune_model
+
+
+def latest_run_dir(outputs_dir="outputs") -> Path:
+    outputs = Path(outputs_dir)
+    runs = [p for p in outputs.iterdir() if p.is_dir() and p.name.startswith("run_")]
+    if not runs:
+        raise FileNotFoundError(f"No run_* folders found in {outputs_dir}/")
+    return max(runs, key=lambda p: p.stat().st_mtime)
+
 
 def evaluate_best_model():
-    # Load the best architecture DNA from the saved file
-    with open("outputs/best_architecture.json", "r") as f:
+    cfg = Config()
+
+    # Device
+    device = get_device("cuda" if torch.cuda.is_available() else "cpu")
+    print("Device:", device)
+
+    # Find latest run and load best architecture
+    run_dir = latest_run_dir("outputs")
+    best_json_path = run_dir / "best_architecture.json"
+    if not best_json_path.exists():
+        raise FileNotFoundError(f"Missing {best_json_path}. Did the evolve run save best_architecture.json?")
+
+    with open(best_json_path, "r") as f:
         best_dna_dict = json.load(f)
 
-    # Rebuild the model from the DNA
     best_dna = ArchitectureDNA.from_dict(best_dna_dict)
-    
-    # Print the best architecture ID before starting
-    print(f"Best Architecture ID: {best_dna.arch_id()}")
+    print("Loaded:", best_json_path)
+    print("Best Architecture ID:", best_dna.arch_id())
 
-    # Set up device (CUDA if available, else CPU)
-    device = get_device("cuda" if torch.cuda.is_available() else "cpu")
-    
-    # Build model from the best DNA
+    # Build model
     model = build_model_from_dna(best_dna).to(device)
 
-    # **Apply pruning to the model here** (e.g., pruning 20% of the weights)
-    model = prune_model(model, pruning_percentage=0.1)  # Adjust the pruning percentage as needed
+    # Optional pruning (set to 0.0 to disable)
+    pruning_pct = 0.10
+    if pruning_pct and pruning_pct > 0:
+        model = prune_model(model, pruning_percentage=pruning_pct)
+        model = model.to(device)
+        print(f"Applied pruning: {pruning_pct*100:.1f}%")
 
-    # Load the training, validation, and test loaders
-    cfg = Config()  # Make sure to use your config file to define parameters
+    # Data
     train_loader, val_loader, test_loader = get_cifar10_loaders(cfg.batch_size, cfg.num_workers)
 
-    # Define the optimizer
+    # Optimizer
     opt = torch.optim.AdamW(
         model.parameters(),
         lr=(best_dna.lr if best_dna.lr is not None else 1e-3),
-        weight_decay=getattr(cfg, "weight_decay", 1e-4)
+        weight_decay=getattr(cfg, "weight_decay", 1e-4),
     )
 
-    # Final retrain or evaluate
-    print(f"=== Final retrain for {cfg.final_train_epochs} epochs ===")
+    input_size = (3, 32, 32)  # CIFAR-10
+
+    # Retrain
+    print(f"\n=== Final retrain for {cfg.final_train_epochs} epochs ===")
     for ep in range(cfg.final_train_epochs):
         train_one(model, train_loader, opt, device)
-        _, val_acc, _, _ = evaluate(model, val_loader, device, input_size=(3, 32, 32))
+        _, val_acc, _, _ = evaluate(model, val_loader, device, input_size=input_size)
         print(f"Epoch {ep+1}/{cfg.final_train_epochs} | val_acc={val_acc:.4f}")
 
     # Final test
-    _, test_acc, y_true, y_pred = evaluate(model, test_loader, device, input_size=(3, 32, 32))
+    _, test_acc, _, _ = evaluate(model, test_loader, device, input_size=input_size)
     print(f"\n=== FINAL TEST ACCURACY (retrained) === {test_acc:.4f}")
 
-    # Save final weights
-    torch.save(model.state_dict(), "outputs/best_phase1_model.pth")
-    print("Saved: outputs/best_phase1_model.pth")
+    # Save weights into the SAME run folder
+    out_path = run_dir / "best_model_retrained.pth"
+    torch.save(model.state_dict(), out_path)
+    print("Saved:", out_path)
+
 
 if __name__ == "__main__":
     evaluate_best_model()

@@ -62,7 +62,6 @@ Over generations, the population improves just like biological evolution — dis
 - **Primary:** CIFAR-10  
   - 32×32 RGB images  
   - 10 classes  
-- **Optional Extension:** CIFAR-100  
 
 ### Preprocessing Pipeline
 - Tensor conversion  
@@ -226,27 +225,25 @@ At the end of evolution:
 - Evaluate on test set  
 
 ### Example Result
-- CIFAR-10 accuracy: ~77–80%+  
+- CIFAR-10 accuracy: ~75-78% 
 - Reduced parameters and FLOPs vs baseline CNN  
 
 ---
 
 ## 📁 Outputs & Artifacts
 
-### Model Files
-- `best_model.pth`  
-- `best_arch.json`  
+### Model Files 
+- `best_architecture.json`  
 
 ### Logs
-- `evolution_metrics.csv`  
+- `metrics.csv`  
 - `lineage.csv` (parent → child)  
-- Mutation history  
+- `Mutation_history.json`
 
 ### Visualizations
 - Accuracy vs generation  
 - Pareto fronts  
-- Params/FLOPs vs accuracy  
-- Confusion matrix  
+- Params/FLOPs vs accuracy   
 - Training curves  
 
 ---
@@ -259,7 +256,7 @@ A **Streamlit dashboard** provides:
 - Best architecture summary  
 - Pareto front visualization  
 - Architecture comparison table  
-- Download links for models & DNA  
+- Visual monitoring + comparison  
 
 This transforms SENN from a research prototype into a **usable system**.
 
@@ -292,8 +289,3 @@ This transforms SENN from a research prototype into a **usable system**.
 
 ### Phase 5 – Dashboard
 - Visualization & interaction
-
-
-
-
-
