@@ -1,0 +1,14 @@
+{
+  "run_dir": "outputs\\run_20260327_111850",
+  "arch_id": "b52cb9a70088c03e",
+  "best_architecture_json": "outputs\\run_20260327_111850\\best_architecture.json",
+  "pruning_percentage": 0.1,
+  "final_train_epochs": 40,
+  "final_test_accuracy": 0.7792,
+  "retrained_model_path": "outputs\\run_20260327_111850\\best_model_retrained.pth",
+  "history_csv_path": "outputs\\run_20260327_111850\\final_retrain_history.csv",
+  "device": "cuda",
+  "optimizer": "adamw",
+  "learning_rate": 0.0010121916762411876,
+  "weight_decay": 0.0001
+}
