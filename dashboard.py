@@ -56,7 +56,8 @@ if not METRICS_PATH.exists():
 
 ACC_VS_GEN_PATH = RUN_DIR / "acc_vs_gen.png"
 BEST_ARCH_PATH = RUN_DIR / "best_architecture.json"
-
+RETRAIN_HISTORY_PATH = RUN_DIR / "final_retrain_history.csv"
+RETRAIN_RESULTS_PATH = RUN_DIR / "final_retrain_results.json"
 
 REQUIRED_COLS = ["arch_id", "generation", "val_accuracy", "param_count", "flops", "latency"]
 
@@ -229,6 +230,24 @@ st.caption("Reads results from `outputs/metrics.csv` and visualizes evolution me
 # Load Data
 # -----------------------------
 df, warn_list = load_metrics(METRICS_PATH)
+
+# Load retrain outputs
+retrain_results = None
+if RETRAIN_RESULTS_PATH.exists():
+    try:
+        import json
+        with open(RETRAIN_RESULTS_PATH, "r", encoding="utf-8") as f:
+            retrain_results = json.load(f)
+    except Exception as e:
+        st.warning(f"Could not read final_retrain_results.json: {e}")
+
+retrain_history_df = None
+if RETRAIN_HISTORY_PATH.exists():
+    try:
+        retrain_history_df = pd.read_csv(RETRAIN_HISTORY_PATH)
+    except Exception as e:
+        st.warning(f"Could not read final_retrain_history.csv: {e}")
+
 
 if df is None:
     st.error(
@@ -456,7 +475,7 @@ if dna is not None:
     with st.expander("Show Architecture DNA"):
         st.json(dna)
 
-st.markdown("---")
+# st.markdown("---")
 
 # -----------------------------
 # Data Table
@@ -469,3 +488,62 @@ with st.expander("Show filtered metrics table"):
     )
 
 st.caption("✅ Run evolution/training to refresh `outputs/metrics.csv` and the images. Then reload this page.")
+
+st.markdown("---")
+
+# -----------------------------
+# Final Retraining Results
+# -----------------------------
+st.subheader("🔁 Final Retraining Results")
+
+if retrain_results is not None:
+    r1, r2, r3, r4 = st.columns(4)
+
+    pruning_pct = retrain_results.get("pruning_percentage", None)
+
+    r1.metric(
+        "Final Test Accuracy",
+        f"{retrain_results.get('final_test_accuracy', 0):.4f}"
+    )
+    r2.metric(
+        "Retrain Epochs",
+        str(retrain_results.get("final_train_epochs", "—"))
+    )
+    r3.metric(
+        "Pruning %",
+        f"{pruning_pct * 100:.1f}%" if pruning_pct is not None else "—"
+    )
+    r4.metric(
+        "Arch ID",
+        retrain_results.get("arch_id", "—")
+    )
+
+    with st.expander("Show final retrain summary"):
+        st.json(retrain_results)
+else:
+    st.info("No file found: final_retrain_results.json")
+
+if retrain_history_df is not None:
+    if "epoch" in retrain_history_df.columns and "val_accuracy" in retrain_history_df.columns:
+        retrain_history_df = retrain_history_df.copy()
+        retrain_history_df["epoch"] = pd.to_numeric(retrain_history_df["epoch"], errors="coerce")
+        retrain_history_df["val_accuracy"] = pd.to_numeric(
+            retrain_history_df["val_accuracy"], errors="coerce"
+        )
+        retrain_history_df = retrain_history_df.dropna(subset=["epoch", "val_accuracy"])
+
+        fig_retrain = px.line(
+            retrain_history_df,
+            x="epoch",
+            y="val_accuracy",
+            markers=True,
+            title="Validation Accuracy During Final Retraining",
+        )
+        fig_retrain.update_layout(height=360, margin=dict(l=20, r=20, t=50, b=20))
+        fig_retrain.update_xaxes(title="Epoch")
+        fig_retrain.update_yaxes(title="val_accuracy")
+
+        st.plotly_chart(fig_retrain, use_container_width=True)
+else:
+    st.info("No file found: final_retrain_history.csv")
+
