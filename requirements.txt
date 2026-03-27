@@ -1,9 +1,5 @@
-torch
-torchvision
-numpy
+streamlit>=1.39
 pandas
-matplotlib
-tqdm
-streamlit
+numpy
 plotly
 python-dateutil
